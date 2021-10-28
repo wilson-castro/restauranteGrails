@@ -6,6 +6,8 @@ class Cliente {
     String email;
     String senha;
 
+    static hasMany = [pedidos:Pedido, produtosPreferidos:Produto]
+
     static constraints = {
     }
 }

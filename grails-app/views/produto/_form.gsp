@@ -1,5 +1,6 @@
 <div id="divMensagem"></div>
-<g:formRemote name="frmProduto" url="[controller: 'produto', action: 'salvar']" update="divMensagem">
+<g:formRemote name="frmProduto" url="[controller: 'produto', action: 'salvar']" update="divMensagem"
+onSuccess="carregarLista()">
     Nome <input type="text" name="nome" value="${produto.nome}" /><br />
     Preço <input type="text" name="preco" value="${produto.preco}" /><br />
     Qtde. atual <input type="text" name="quantidade" value="${produto.estoque?.quantidade}" /><br />

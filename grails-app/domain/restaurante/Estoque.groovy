@@ -4,9 +4,8 @@ class Estoque {
     
     Integer quantidade;
     Integer quantidadeMinima;
-    Produto produto;
 
-    static belongsTo = [Produto];
+    static belongsTo = [produto:Produto];
 
     static constraints = {
         quantidade min: 0;

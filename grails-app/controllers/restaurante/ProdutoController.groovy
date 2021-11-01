@@ -27,12 +27,18 @@ class ProdutoController {
         produto.estoque.quantidade = params.quantidade.toInteger();
         produto.estoque.quantidadeMinima = params.quantidadeMinima.toInteger();
 
+        produto.estoque.produto = produto
+        produto.estoque.save()
+
         produto.validate()
         if (!produto.hasErrors()){
 
-            produto.save(flush:true)
-            render("Salvou com sucesso")
+            produto.save(flush:true);
+            render("Salvou com sucesso");
         }else{
+
+            println produto.getErrors();
+
             render("Ops... deu pau!")
         }
     }
